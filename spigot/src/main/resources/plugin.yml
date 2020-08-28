@@ -1,0 +1,5 @@
+name: FrozenJoin
+version: @version@
+main: com.github.frcsty.FrozenJoinSpigot
+author: Frcsty
+api-version: 1.13
