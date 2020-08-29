@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerChangedWorldEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
 
-class PlayerListener : Listener {
+object PlayerListener : Listener {
 
     private val manager = Bukkit.getPluginManager()
 

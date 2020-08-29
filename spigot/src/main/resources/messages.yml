@@ -1,0 +1,7 @@
+messages:
+  help-command:
+    - '&8{- &bFrozenJoin &8-} (&f{version}&8)'
+    - ''
+    - ' &fAdmin Commands&8:'
+    - ' &8- &7help[action](hover: &7Description&8: &fShows the plugins help\n message\n\n&7Permission&8: &f&nfrozenjoin.command.help)'
+    - ''

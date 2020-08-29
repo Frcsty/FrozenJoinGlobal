@@ -25,6 +25,7 @@ subprojects {
     dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         implementation "me.mattstudios.utils:matt-framework:1.4"
+        implementation "me.mattstudios.utils:matt-framework-msg:1.1"
 
         compileOnly "com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT"
     }
@@ -46,7 +47,8 @@ subprojects {
 
     sourceCompatibility = version
     targetCompatibility = version
+}
 
-    compileKotlin { kotlinOptions.jvmTarget = version }
-
+compileKotlin {
+    kotlinOptions.jvmTarget = version
 }

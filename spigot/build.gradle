@@ -3,5 +3,7 @@ repositories {
 }
 
 dependencies {
+    implementation project(":common")
+    
     compileOnly "com.sk89q.worldguard:worldguard-bukkit:7.0.3"
 }

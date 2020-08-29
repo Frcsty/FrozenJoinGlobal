@@ -13,8 +13,8 @@ import org.bukkit.event.Listener
 import org.bukkit.plugin.PluginManager
 
 class RegionListener(session: Session?) :
-    Handler(session),
-    Listener {
+    Handler(session), Listener {
+
     private val manager: PluginManager = Bukkit.getPluginManager()
 
     class Factory : Handler.Factory<RegionListener>() {
@@ -23,6 +23,17 @@ class RegionListener(session: Session?) :
         }
     }
 
+    /**
+     * Checks if the user has switched a region,
+     * if so, calls the corresponding event
+     *
+     * Events:
+     * [RegionsChangedEvent],
+     * [RegionsEnteredEvent],
+     * [RegionsLeftEvent],
+     * [RegionEnteredEvent],
+     * [RegionLeftEvent]
+     */
     override fun onCrossBoundary(
         player: LocalPlayer,
         from: Location?,
