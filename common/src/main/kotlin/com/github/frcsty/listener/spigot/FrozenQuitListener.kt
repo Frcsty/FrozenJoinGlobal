@@ -7,6 +7,6 @@ object FrozenQuitListener {
 
     @Subscribe
     fun onFrozenQuit(event: FrozenQuitEvent) {
-
+        println("Executed @${event.eventName}")
     }
 }

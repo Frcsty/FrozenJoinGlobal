@@ -7,6 +7,6 @@ object RegionsLeftListener {
 
     @Subscribe
     fun onRegionsLeft(event: RegionsLeftEvent) {
-
+        println("Executed @${event.eventName}")
     }
 }

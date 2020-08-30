@@ -1,5 +1,7 @@
 package com.github.frcsty
 
+import com.github.frcsty.listener.bungee.FrozenHandshakeListener
+import com.github.frcsty.listener.bungee.FrozenPostLoginListener
 import com.github.frcsty.listener.spigot.FrozenJoinListener
 import com.github.frcsty.listener.spigot.FrozenQuitListener
 import com.github.frcsty.listener.spigot.FrozenSwitchWorldListener
@@ -17,7 +19,10 @@ class ListenerRegistration {
             RegionLeftListener,
             RegionsChangedListener,
             RegionsEnteredListener,
-            RegionsLeftListener
+            RegionsLeftListener,
+
+            FrozenHandshakeListener,
+            FrozenPostLoginListener
     )
 
     val eventBus = EventBus()

@@ -7,6 +7,6 @@ object FrozenSwitchWorldListener {
 
     @Subscribe
     fun onFrozenSwitchWorld(event: FrozenSwitchWorldEvent) {
-
+        println("Executed @${event.eventName}")
     }
 }

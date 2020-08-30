@@ -1,13 +1,10 @@
 package com.github.frcsty.event.bungee
 
-import net.md_5.bungee.api.connection.PendingConnection
 import net.md_5.bungee.api.plugin.Event
-import net.md_5.bungee.protocol.packet.Handshake
 import org.bukkit.event.Cancellable
 
-class FrozenHandshakeEvent(
-        val handshake: Handshake,
-        val connection: PendingConnection
+class FrozenPostLoginEvent(
+
 ) : Event(), Cancellable {
 
     /**

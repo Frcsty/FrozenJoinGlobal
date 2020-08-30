@@ -3,9 +3,6 @@ repositories {
 }
 
 dependencies {
-    implementation project(":spigot")
-    implementation project(":bungee")
-
     compileOnly "com.sk89q.worldguard:worldguard-bukkit:7.0.3"
     compileOnly "net.md-5:bungeecord-api:1.16-R0.3"
 }

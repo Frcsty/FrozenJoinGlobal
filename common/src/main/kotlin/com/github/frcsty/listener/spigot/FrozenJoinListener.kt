@@ -7,6 +7,6 @@ object FrozenJoinListener {
 
     @Subscribe
     fun onFrozenJoin(event: FrozenJoinEvent) {
-
+        println("Executed @${event.eventName}")
     }
 }

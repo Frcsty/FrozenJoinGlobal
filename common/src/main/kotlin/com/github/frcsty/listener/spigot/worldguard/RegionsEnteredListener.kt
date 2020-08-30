@@ -7,6 +7,6 @@ object RegionsEnteredListener {
 
     @Subscribe
     fun onRegionsEntered(event: RegionsEnteredEvent) {
-
+        println("Executed @${event.eventName}")
     }
 }
