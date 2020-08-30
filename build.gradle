@@ -2,17 +2,16 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     id "com.github.johnrengelman.shadow" version "6.0.0"
-    id "org.jetbrains.kotlin.jvm" version "1.4.0"
+    id "org.jetbrains.kotlin.jvm" version "1.4.0" apply false
 }
 
 subprojects {
-    
     apply plugin: "com.github.johnrengelman.shadow"
     apply plugin: "org.jetbrains.kotlin.jvm"
-
+    
     group "com.github.frcsty"
     version "3.0.0"
-
+    
     def path = "com.github.frcsty.frozenjoin"
 
     repositories {
@@ -28,6 +27,8 @@ subprojects {
         
         implementation "me.mattstudios.utils:matt-framework:1.4"
         implementation "me.mattstudios.utils:matt-framework-msg:1.1"
+
+        compileOnly "com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT"
     }
 
     processResources {
@@ -35,19 +36,19 @@ subprojects {
             filter ReplaceTokens, tokens: [version: project.version]
         }
     }
-
+    
     shadowJar {
         relocate "kotlin", "${path}.kotlin"
         relocate "me.mattstudios.mf", "${path}.mf-utils"
-
+        
         archiveFileName.set("${project.name}-${version}.jar")
     }
-
+    
     def version = JavaVersion.VERSION_1_8
-
+    
     sourceCompatibility = version
     targetCompatibility = version
-
+    
     compileKotlin {
         kotlinOptions.jvmTarget = version
     }

@@ -1,4 +1,4 @@
-package com.github.frcsty.event
+package com.github.frcsty.event.spigot
 
 import org.bukkit.entity.Player
 import org.bukkit.event.Cancellable
@@ -6,8 +6,8 @@ import org.bukkit.event.Event
 import org.bukkit.event.HandlerList
 
 class FrozenQuitEvent(
-    var default: String?,
-    var player: Player
+        var default: String?,
+        var player: Player
 ): Event(), Cancellable {
 
     override fun getHandlers() = handlerList

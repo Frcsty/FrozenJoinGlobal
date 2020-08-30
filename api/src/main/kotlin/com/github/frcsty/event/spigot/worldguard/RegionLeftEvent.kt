@@ -1,4 +1,4 @@
-package com.github.frcsty.event.worldguard
+package com.github.frcsty.event.spigot.worldguard
 
 import com.sk89q.worldguard.protection.regions.ProtectedRegion
 import org.bukkit.event.Cancellable
@@ -6,9 +6,9 @@ import org.bukkit.event.Event
 import org.bukkit.event.HandlerList
 import java.util.*
 
-class RegionsLeftEvent(
-    val uuid: UUID,
-    val regions: Set<ProtectedRegion?>
+class RegionLeftEvent(
+        val uuid: UUID,
+        val region: ProtectedRegion?
 ) : Event(), Cancellable {
 
     override fun getHandlers() = handlerList

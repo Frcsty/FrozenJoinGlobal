@@ -7,7 +7,8 @@ import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import java.io.File
 
-class MessageHandler(private val plugin: FrozenJoinSpigot) : Registerable {
+class MessageHandler(private val plugin: FrozenJoinSpigot) : Registerable
+{
 
     private val messages = mutableMapOf<String, Any?>()
 

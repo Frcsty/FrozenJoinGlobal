@@ -7,14 +7,18 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class FrozenJoinSpigot : JavaPlugin() {
 
+    val registration = ListenerRegistration()
+
     private val registerable = setOf(
-        ListenerHandler(this),
-        CommandHandler(this),
-        MessageHandler(this)
+            CommandHandler(this),
+            MessageHandler(this)
     )
 
     override fun onEnable() {
-       registerable.forEach { it.register() }
+        registration.register()
+
+        registerable.plus(ListenerHandler(this, registration.eventBus))
+        registerable.forEach { it.register() }
     }
 
     override fun onDisable() {

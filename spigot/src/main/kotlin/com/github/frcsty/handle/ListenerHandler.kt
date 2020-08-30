@@ -2,23 +2,15 @@ package com.github.frcsty.handle
 
 import com.github.frcsty.FrozenJoinSpigot
 import com.github.frcsty.Registerable
-import com.github.frcsty.listener.base.PlayerListener
-import com.github.frcsty.listener.base.RegionListener
-import com.github.frcsty.listener.custom.FrozenJoinListener
-import com.github.frcsty.listener.custom.FrozenQuitListener
-import com.github.frcsty.listener.custom.FrozenSwitchWorldListener
-import com.github.frcsty.listener.custom.worldguard.*
+import com.github.frcsty.listener.PlayerListener
+import com.github.frcsty.listener.RegionListener
+import com.google.common.eventbus.EventBus
 import com.sk89q.worldguard.WorldGuard
-import org.bukkit.Bukkit
 
-class ListenerHandler(private val plugin: FrozenJoinSpigot) : Registerable {
+class ListenerHandler(private val plugin: FrozenJoinSpigot, eventBus: EventBus) : Registerable {
 
     private val listeners = setOf(
-        PlayerListener,
-
-        FrozenJoinListener(),
-        FrozenQuitListener(),
-        FrozenSwitchWorldListener()
+            PlayerListener(eventBus)
     )
 
     /**
@@ -27,18 +19,9 @@ class ListenerHandler(private val plugin: FrozenJoinSpigot) : Registerable {
      * support.
      */
     private fun registerWorldGuard() {
-        val worldGuard: WorldGuard? = WorldGuard.getInstance()?: return
+        val worldGuard: WorldGuard? = WorldGuard.getInstance() ?: return
 
         worldGuard?.platform?.sessionManager?.registerHandler(RegionListener.factory, null)
-        setOf(
-            RegionEnteredListener(),
-            RegionLeftListener(),
-            RegionsChangedListener(),
-            RegionsEnteredListener(),
-            RegionsLeftListener()
-        ).forEach {
-            listeners.plus(it)
-        }
     }
 
     override fun identifier() = "listener"
@@ -47,7 +30,7 @@ class ListenerHandler(private val plugin: FrozenJoinSpigot) : Registerable {
         registerWorldGuard()
 
         listeners.forEach {
-            Bukkit.getPluginManager().registerEvents(it, plugin)
+            plugin.server.pluginManager.registerEvents(it, plugin)
         }
     }
 

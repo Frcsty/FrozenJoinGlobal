@@ -1,13 +1,15 @@
-package com.github.frcsty.event
+package com.github.frcsty.event.spigot.worldguard
 
-import org.bukkit.entity.Player
+import com.sk89q.worldguard.protection.regions.ProtectedRegion
 import org.bukkit.event.Cancellable
 import org.bukkit.event.Event
 import org.bukkit.event.HandlerList
+import java.util.*
 
-class FrozenJoinEvent(
-    var default: String?,
-    var player: Player
+class RegionsChangedEvent(
+        val uuid: UUID,
+        val previousRegions: Set<ProtectedRegion?>,
+        val currentRegions: Set<ProtectedRegion?>
 ) : Event(), Cancellable {
 
     override fun getHandlers() = handlerList

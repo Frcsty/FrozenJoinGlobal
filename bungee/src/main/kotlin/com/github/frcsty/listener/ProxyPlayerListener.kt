@@ -1,0 +1,18 @@
+package com.github.frcsty.listener
+
+import com.github.frcsty.event.bungee.FrozenHandshakeEvent
+import com.google.common.eventbus.EventBus
+import net.md_5.bungee.api.event.PlayerHandshakeEvent
+import net.md_5.bungee.api.plugin.Listener
+import net.md_5.bungee.event.EventHandler
+
+class ProxyPlayerListener(private val eventBus: EventBus) : Listener {
+
+    @EventHandler
+    fun onHandshake(event: PlayerHandshakeEvent) =
+        eventBus.post(FrozenHandshakeEvent(
+                event.handshake,
+                event.connection
+        ))
+
+}

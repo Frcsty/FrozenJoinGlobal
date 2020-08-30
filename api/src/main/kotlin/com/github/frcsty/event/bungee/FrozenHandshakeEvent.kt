@@ -1,16 +1,14 @@
-package com.github.frcsty.event.worldguard
+package com.github.frcsty.event.bungee
 
-import com.sk89q.worldguard.protection.regions.ProtectedRegion
-import org.bukkit.entity.Player
+import net.md_5.bungee.api.connection.PendingConnection
+import net.md_5.bungee.protocol.packet.Handshake
 import org.bukkit.event.Cancellable
 import org.bukkit.event.Event
 import org.bukkit.event.HandlerList
-import java.util.*
 
-class RegionsChangedEvent(
-    val uuid: UUID,
-    val previousRegions: Set<ProtectedRegion?>,
-    val currentRegions: Set<ProtectedRegion?>
+class FrozenHandshakeEvent(
+        val handshake: Handshake,
+        val connection: PendingConnection
 ) : Event(), Cancellable {
 
     override fun getHandlers() = handlerList
