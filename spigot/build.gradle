@@ -3,7 +3,8 @@ repositories {
 }
 
 dependencies {
-    implementation project(":common")
+    implementation project(":common") { exlude group "com.github.frcsty" }
+    implementation project(":api")
     
     compileOnly "com.sk89q.worldguard:worldguard-bukkit:7.0.3"
 }

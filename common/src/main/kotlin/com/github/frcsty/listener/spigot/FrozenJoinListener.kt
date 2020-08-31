@@ -1,12 +1,14 @@
 package com.github.frcsty.listener.spigot
 
 import com.github.frcsty.event.spigot.FrozenJoinEvent
+import com.github.frcsty.listener.ActionListener
 import com.google.common.eventbus.Subscribe
 
-object FrozenJoinListener {
+object FrozenJoinListener : ActionListener {
 
     @Subscribe
-    fun onFrozenJoin(event: FrozenJoinEvent) {
+    fun onEvent(event: FrozenJoinEvent) {
         println("Executed @${event.eventName}")
     }
+
 }

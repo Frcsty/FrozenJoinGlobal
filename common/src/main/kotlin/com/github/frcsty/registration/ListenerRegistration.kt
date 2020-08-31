@@ -1,4 +1,4 @@
-package com.github.frcsty
+package com.github.frcsty.registration
 
 import com.github.frcsty.listener.bungee.FrozenHandshakeListener
 import com.github.frcsty.listener.bungee.FrozenPostLoginListener
@@ -10,7 +10,7 @@ import com.google.common.eventbus.EventBus
 
 class ListenerRegistration {
 
-    private val spigotListeners = setOf(
+    private val spigotListeners = mutableListOf(
             FrozenJoinListener,
             FrozenQuitListener,
             FrozenSwitchWorldListener,
@@ -22,7 +22,7 @@ class ListenerRegistration {
             RegionsLeftListener
     )
 
-    private val bungeeListeners = setOf(
+    private val bungeeListeners = mutableListOf(
             FrozenHandshakeListener,
             FrozenPostLoginListener
     )

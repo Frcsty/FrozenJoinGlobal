@@ -1,5 +1,8 @@
 package com.github.frcsty.listener
 
+import com.github.frcsty.event.spigot.FrozenJoinEvent
+import com.github.frcsty.event.spigot.FrozenQuitEvent
+import com.github.frcsty.event.spigot.FrozenSwitchWorldEvent
 import com.google.common.eventbus.EventBus
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -15,11 +18,13 @@ class PlayerListener(private val eventBus: EventBus) : Listener {
      * Calls [FrozenJoinEvent]
      */
     @EventHandler
-    fun onPlayerJoin(event: PlayerJoinEvent) =
-            eventBus.post(FrozenJoinEvent(
-                    event.joinMessage,
-                    event.player)
-            )
+    fun onPlayerJoin(event: PlayerJoinEvent) {
+        println("Triggered PlayerJoinEvent")
+        eventBus.post(FrozenJoinEvent(
+                event.joinMessage,
+                event.player)
+        )
+    }
 
     /**
      * Called when a player leaves a spigot server.

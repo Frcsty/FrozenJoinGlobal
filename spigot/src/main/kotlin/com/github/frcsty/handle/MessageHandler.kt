@@ -35,6 +35,6 @@ class MessageHandler(private val plugin: FrozenJoinSpigot) : Registerable
     }
 
     fun get(key: String): Any {
-        return messages[key]?: return "Object key $key has not been found within 'messages.yml'!"
+        return messages[key]?: return "Object key '$key' has not been found within 'messages.yml'!"
     }
 }

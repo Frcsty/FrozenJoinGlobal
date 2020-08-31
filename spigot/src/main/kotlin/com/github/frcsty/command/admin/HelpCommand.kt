@@ -37,18 +37,22 @@ class HelpCommand(private val plugin: FrozenJoinSpigot) : CommandBase() {
         if (sender !is Player) {
             for (line in listMessage) {
                 sender.sendMessage(line.replace(
-                    "{version}",
-                    plugin.description.version).simpleColor()
+                        "{version}",
+                        plugin.description.version).simpleColor()
                 )
             }
             return
         }
 
         for (line in listMessage) {
-           line.replace(
-                "{version}",
-                plugin.description.version
-           ).color().sendMessage(sender)
+            if (line.isEmpty()) {
+                sender.sendMessage("")
+                continue
+            }
+            line.replace(
+                    "{version}",
+                    plugin.description.version
+            ).color().sendMessage(sender)
         }
     }
 }

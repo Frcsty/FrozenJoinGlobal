@@ -1,10 +1,11 @@
 package com.github.frcsty.event.bungee
 
+import net.md_5.bungee.api.connection.ProxiedPlayer
 import net.md_5.bungee.api.plugin.Event
 import org.bukkit.event.Cancellable
 
 class FrozenPostLoginEvent(
-
+        val player: ProxiedPlayer
 ) : Event(), Cancellable {
 
     /**

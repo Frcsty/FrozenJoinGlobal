@@ -7,10 +7,10 @@ import com.github.frcsty.listener.RegionListener
 import com.google.common.eventbus.EventBus
 import com.sk89q.worldguard.WorldGuard
 
-class ListenerHandler(private val plugin: FrozenJoinSpigot, eventBus: EventBus) : Registerable {
+class ListenerHandler(private val plugin: FrozenJoinSpigot) : Registerable {
 
     private val listeners = setOf(
-            PlayerListener(eventBus)
+            PlayerListener(plugin.listenerRegistration.eventBus)
     )
 
     /**
@@ -19,8 +19,9 @@ class ListenerHandler(private val plugin: FrozenJoinSpigot, eventBus: EventBus) 
      * support.
      */
     private fun registerWorldGuard() {
-        val worldGuard: WorldGuard? = WorldGuard.getInstance() ?: return
+        plugin.server.pluginManager.getPlugin("WorldGuard")?: return
 
+        val worldGuard: WorldGuard? = WorldGuard.getInstance() ?: return
         worldGuard?.platform?.sessionManager?.registerHandler(RegionListener.factory, null)
     }
 

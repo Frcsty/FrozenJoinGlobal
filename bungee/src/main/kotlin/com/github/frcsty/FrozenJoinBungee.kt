@@ -1,19 +1,22 @@
 package com.github.frcsty
 
 import com.github.frcsty.handle.ListenerHandler
+import com.github.frcsty.registration.ListenerRegistration
+import com.github.frcsty.registration.StorageRegistration
 import net.md_5.bungee.api.plugin.Plugin
 
 class FrozenJoinBungee : Plugin() {
 
-    val registration = ListenerRegistration()
+    private val listenerRegistration = ListenerRegistration()
+    private val storageRegistration = StorageRegistration()
 
     override fun onEnable() {
-        registration.register(false)
+        listenerRegistration.register(false)
 
-        ListenerHandler(this, registration.eventBus).register()
+        storageRegistration.initializeFormats("$dataFolder/formats.yml")
+        storageRegistration.initializeMotds("$dataFolder/motds.yml")
+
+        ListenerHandler(this, listenerRegistration.eventBus).register()
     }
 
-    override fun onDisable() {
-
-    }
 }

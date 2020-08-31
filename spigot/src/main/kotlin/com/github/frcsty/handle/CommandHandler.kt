@@ -8,15 +8,14 @@ import com.github.frcsty.command.user.FormatCommand
 import com.github.frcsty.command.user.MotdCommand
 import me.mattstudios.mf.base.CommandManager
 
-class CommandHandler(private val plugin: FrozenJoinSpigot) : Registerable
-{
+class CommandHandler(private val plugin: FrozenJoinSpigot) : Registerable {
 
     private var commands = setOf(
-        HelpCommand(plugin),
-        ReloadCommand(plugin),
+            HelpCommand(plugin),
+            ReloadCommand(plugin),
 
-        FormatCommand(),
-        MotdCommand()
+            FormatCommand(),
+            MotdCommand()
     )
 
     override fun identifier() = "command"

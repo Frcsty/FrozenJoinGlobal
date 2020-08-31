@@ -85,7 +85,7 @@ class RegionListener(private val eventBus: EventBus, session: Session?) : Handle
 
     companion object {
         private val plugin = JavaPlugin.getPlugin(FrozenJoinSpigot::class.java)
-        private val eventBus = plugin.registration.eventBus
+        private val eventBus = plugin.listenerRegistration.eventBus
 
         val factory = Factory(eventBus)
     }
