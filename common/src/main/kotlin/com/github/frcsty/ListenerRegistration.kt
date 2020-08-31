@@ -10,7 +10,7 @@ import com.google.common.eventbus.EventBus
 
 class ListenerRegistration {
 
-    private val listeners = setOf(
+    private val spigotListeners = setOf(
             FrozenJoinListener,
             FrozenQuitListener,
             FrozenSwitchWorldListener,
@@ -19,15 +19,21 @@ class ListenerRegistration {
             RegionLeftListener,
             RegionsChangedListener,
             RegionsEnteredListener,
-            RegionsLeftListener,
+            RegionsLeftListener
+    )
 
+    private val bungeeListeners = setOf(
             FrozenHandshakeListener,
             FrozenPostLoginListener
     )
 
     val eventBus = EventBus()
 
-    fun register() {
-        listeners.forEach { eventBus.register(it) }
+    fun register(spigot: Boolean) {
+        if (spigot) {
+            spigotListeners.forEach { eventBus.register(it) }
+        } else {
+            bungeeListeners.forEach { eventBus.register(it) }
+        }
     }
 }

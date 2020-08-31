@@ -15,7 +15,7 @@ class FrozenJoinSpigot : JavaPlugin() {
     )
 
     override fun onEnable() {
-        registration.register()
+        registration.register(true)
 
         registerable.plus(ListenerHandler(this, registration.eventBus))
         registerable.forEach { it.register() }

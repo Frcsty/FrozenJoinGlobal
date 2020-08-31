@@ -8,7 +8,7 @@ class FrozenJoinBungee : Plugin() {
     val registration = ListenerRegistration()
 
     override fun onEnable() {
-        registration.register()
+        registration.register(false)
 
         ListenerHandler(this, registration.eventBus).register()
     }

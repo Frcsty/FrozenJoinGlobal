@@ -41,7 +41,7 @@ subprojects {
         relocate "kotlin", "${path}.kotlin"
         relocate "me.mattstudios.mf", "${path}.mf-utils"
         
-        archiveFileName.set("${project.name}-${version}.jar")
+        archiveFileName.set("FrozenJoin[${project.name}]-${version}.jar")
     }
     
     def version = JavaVersion.VERSION_1_8
