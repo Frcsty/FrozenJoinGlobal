@@ -9,10 +9,10 @@ subprojects {
     apply plugin: "com.github.johnrengelman.shadow"
     apply plugin: "org.jetbrains.kotlin.jvm"
     
-    group "com.github.frcsty"
+    group "org.op65n.frcsty"
     version "3.0.0"
     
-    def path = "com.github.frcsty.frozenjoin"
+    def path = "org.op65n.frcsty.frozenjoin"
 
     repositories {
         mavenCentral()

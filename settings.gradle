@@ -2,7 +2,6 @@ rootProject.name = "FrozenJoin"
 
 include(
         "common",
-        "spigot",
         "bungee",
         "api"
 )

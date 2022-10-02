@@ -1,0 +1,9 @@
+# Write any todo stuff here, for easier tracking
+
+Port actions,
+Revamp listeners & events,
+Revamp objects,
+Introduce global storage,
+Expand on the events & listeners (add further customizability),
+
+In general port everything from the paper version

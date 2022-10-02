@@ -1,6 +1,0 @@
-motds:
-  example:
-    permission: frozenjoin.motd.example
-    priority: 1
-    actions:
-      - '[MESSAGE] Some server MOTD bullshit'
