@@ -1,7 +1,7 @@
-package com.github.frcsty.registration
+package org.op65n.frcsty.registration
 
-import com.github.frcsty.model.Format
-import com.github.frcsty.model.MOTD
+import org.op65n.frcsty.model.Format
+import org.op65n.frcsty.model.MOTD
 import org.bukkit.configuration.file.YamlConfiguration
 import java.io.File
 

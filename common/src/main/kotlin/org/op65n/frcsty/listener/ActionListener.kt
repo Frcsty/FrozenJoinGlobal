@@ -1,3 +1,3 @@
-package com.github.frcsty.listener
+package org.op65n.frcsty.listener
 
 interface ActionListener

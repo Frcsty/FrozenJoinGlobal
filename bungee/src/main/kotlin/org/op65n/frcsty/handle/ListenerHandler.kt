@@ -1,8 +1,8 @@
-package com.github.frcsty.handle
+package org.op65n.frcsty.handle
 
-import com.github.frcsty.FrozenJoinBungee
-import com.github.frcsty.Registerable
-import com.github.frcsty.listener.ProxyPlayerListener
+import org.op65n.frcsty.FrozenJoinBungee
+import org.op65n.frcsty.Registerable
+import org.op65n.frcsty.listener.ProxyPlayerListener
 import com.google.common.eventbus.EventBus
 
 class ListenerHandler(private val plugin: FrozenJoinBungee, eventBus: EventBus) : Registerable {

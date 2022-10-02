@@ -1,7 +1,7 @@
-package com.github.frcsty.listener.spigot.worldguard
+package org.op65n.frcsty.listener.spigot.worldguard
 
 import org.op65n.frcsty.event.spigot.worldguard.RegionsLeftEvent
-import com.github.frcsty.listener.ActionListener
+import org.op65n.frcsty.listener.ActionListener
 import com.google.common.eventbus.Subscribe
 
 object RegionsLeftListener : ActionListener {

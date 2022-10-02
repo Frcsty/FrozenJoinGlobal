@@ -1,7 +1,7 @@
-package com.github.frcsty.listener.bungee
+package org.op65n.frcsty.listener.bungee
 
 import org.op65n.frcsty.event.bungee.FrozenPostLoginEvent
-import com.github.frcsty.listener.ActionListener
+import org.op65n.frcsty.listener.ActionListener
 import com.google.common.eventbus.Subscribe
 
 object FrozenPostLoginListener : ActionListener {

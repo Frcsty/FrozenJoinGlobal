@@ -1,11 +1,11 @@
-package com.github.frcsty.registration
+package org.op65n.frcsty.registration
 
-import com.github.frcsty.listener.bungee.FrozenHandshakeListener
-import com.github.frcsty.listener.bungee.FrozenPostLoginListener
-import com.github.frcsty.listener.spigot.FrozenJoinListener
-import com.github.frcsty.listener.spigot.FrozenQuitListener
-import com.github.frcsty.listener.spigot.FrozenSwitchWorldListener
-import com.github.frcsty.listener.spigot.worldguard.*
+import org.op65n.frcsty.listener.bungee.FrozenHandshakeListener
+import org.op65n.frcsty.listener.bungee.FrozenPostLoginListener
+import org.op65n.frcsty.listener.spigot.FrozenJoinListener
+import org.op65n.frcsty.listener.spigot.FrozenQuitListener
+import org.op65n.frcsty.listener.spigot.FrozenSwitchWorldListener
+import org.op65n.frcsty.listener.spigot.worldguard.*
 import com.google.common.eventbus.EventBus
 
 class ListenerRegistration {

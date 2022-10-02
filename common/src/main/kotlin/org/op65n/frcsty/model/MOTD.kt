@@ -1,4 +1,4 @@
-package com.github.frcsty.model
+package org.op65n.frcsty.model
 
 class MOTD(
         var permission: String?,

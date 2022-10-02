@@ -1,4 +1,4 @@
-package com.github.frcsty.listener
+package org.op65n.frcsty.listener
 
 import org.op65n.frcsty.event.bungee.FrozenHandshakeEvent
 import org.op65n.frcsty.event.bungee.FrozenPostLoginEvent

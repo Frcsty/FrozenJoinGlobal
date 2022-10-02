@@ -1,8 +1,8 @@
-package com.github.frcsty
+package org.op65n.frcsty
 
-import com.github.frcsty.handle.ListenerHandler
-import com.github.frcsty.registration.ListenerRegistration
-import com.github.frcsty.registration.StorageRegistration
+import org.op65n.frcsty.handle.ListenerHandler
+import org.op65n.frcsty.registration.ListenerRegistration
+import org.op65n.frcsty.registration.StorageRegistration
 import net.md_5.bungee.api.plugin.Plugin
 
 class FrozenJoinBungee : Plugin() {
